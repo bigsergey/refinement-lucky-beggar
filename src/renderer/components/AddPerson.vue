@@ -1,8 +1,15 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <label for="name" />
-    <input v-model="name" type="text" id="name" name="name"/>
-    <input type="submit" value="Add"/>
+    <b-field>
+      <b-input
+        placeholder="Type name"
+        type="text"
+        v-model="name"
+      />
+      <p class="control">
+        <b-input type="submit" value="Add" />
+      </p>
+    </b-field>
   </form>
 </template>
 
@@ -18,8 +25,10 @@ export default {
   },
   methods: {
     handleSubmit() {
-      this.onAdded(this.name);
-      this.name = '';
+      if (this.name) {
+        this.onAdded(this.name);
+        this.name = '';
+      }
     },
   },
 };
