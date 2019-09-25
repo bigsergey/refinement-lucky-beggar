@@ -1,9 +1,10 @@
 <template>
   <section>
-    <hero title="Welcome on our meeting!" subtitle="Lets generate next lucky beggar" />
+    <hero title="Welcome on our meeting!" />
 
-    <section class="container">
+    <section class="main-container container">
       <div class="tile is-ancestor">
+        <randomizer-tile v-bind:participantList="participantList" />
         <participants-tile v-bind:list="participantList" />
       </div>
     </section>
@@ -12,10 +13,11 @@
 
 <script>
 import Hero from './Hero';
+import RandomizerTile from './RandomizerTile';
 import ParticipantsTile from './ParticipantsTile';
 
 export default {
-  components: { Hero, ParticipantsTile },
+  components: { Hero, ParticipantsTile, RandomizerTile },
   data() {
     return {
       participantList: ['First Person', 'Second Person'],
@@ -23,3 +25,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.main-container {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+</style>
