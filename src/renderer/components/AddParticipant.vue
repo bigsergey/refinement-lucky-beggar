@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form class="form" @submit.prevent="handleSubmit">
     <b-field>
       <b-input
         placeholder="Type name"
@@ -33,3 +33,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.form {
+  padding-top: 12px;
+}
+</style>
