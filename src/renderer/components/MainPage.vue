@@ -14,7 +14,7 @@
     components: { AddParticipant, ParticipantList },
     data() {
       return {
-        participantList: [],
+        participantList: ['First Person', 'Second Person'],
       };
     },
     methods: {
