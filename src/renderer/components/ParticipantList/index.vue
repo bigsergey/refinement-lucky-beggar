@@ -15,7 +15,7 @@
 <script>
 export default {
   props: {
-    list: Array,
+    list: { type: Array },
   },
   methods: {
     onRemove(index) {
