@@ -2,16 +2,16 @@
   <div>
     <h1>Welcome to our meeting!</h1>
     <participant-list v-bind:list="participantList"></participant-list>
-    <add-person :onAdded="onParticipantAdded"></add-person>
+    <add-participant :onAdded="onParticipantAdded"></add-participant>
   </div>
 </template>
 
 <script>
-  import AddPerson from './AddPerson';
+  import AddParticipant from './AddParticipant';
   import ParticipantList from './ParticipantList';
 
   export default {
-    components: { AddPerson, ParticipantList },
+    components: { AddParticipant, ParticipantList },
     data() {
       return {
         participantList: [],
