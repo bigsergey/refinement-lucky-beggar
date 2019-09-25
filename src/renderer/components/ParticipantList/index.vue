@@ -6,6 +6,7 @@
         attached
         closable
         aria-close-label="Remove participant"
+        @close="onRemove(index)"
       >{{index + 1}}. {{item}}</b-tag>
     </div>
   </section>
@@ -15,6 +16,11 @@
 export default {
   props: {
     list: Array,
+  },
+  methods: {
+    onRemove(index) {
+      this.list.splice(index, 1);
+    },
   },
 };
 </script>
