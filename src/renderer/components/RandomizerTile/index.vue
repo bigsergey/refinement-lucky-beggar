@@ -32,7 +32,7 @@ export default {
     getRandomItem() {
       const maxIndex = this.participantList.length;
       const randomIndex = Math.floor(Math.random() * maxIndex);
-      this.luckyBeggarList.push(this.participantList[randomIndex]);
+      this.luckyBeggarList.unshift(this.participantList[randomIndex]);
     },
   },
 };
