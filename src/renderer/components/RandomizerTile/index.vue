@@ -11,15 +11,16 @@
         @click="getRandomItem"
       >Generate</b-button>
 
-      <ul v-if="luckyBeggarList.length > 0">
-        <li v-for="(item, index) in luckyBeggarList" v-bind:key="index">{{item}}</li>
-      </ul>
+      <lucky-beggar-list v-bind:luckyBeggarList="luckyBeggarList"/>
     </div>
   </section>
 </template>
 
 <script>
+import LuckyBeggarList from './LuckyBeggarList';
+
 export default {
+  components: { LuckyBeggarList },
   props: {
     participantList: { type: Array },
   },
