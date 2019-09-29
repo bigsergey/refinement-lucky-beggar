@@ -20,7 +20,7 @@ export default {
   components: { Hero, ParticipantsTile, RandomizerTile },
   data() {
     return {
-      participantList: ['First Person', 'Second Person'],
+      participantList: ['First Person', 'Second Person', 'Third Person', 'Fourth Person'],
     };
   },
 };
