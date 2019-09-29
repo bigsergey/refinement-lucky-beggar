@@ -9,6 +9,7 @@
         size="is-medium"
         icon-right="account-convert"
         @click="getRandomItem"
+        :disabled="participantList.length === 0"
       >Generate</b-button>
 
       <lucky-beggar-list v-bind:luckyBeggarList="luckyBeggarList"/>

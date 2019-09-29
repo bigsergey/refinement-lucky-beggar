@@ -1,8 +1,10 @@
 <template>
   <ul class="wrapper" v-if="luckyBeggarList.length > 0">
     <li class="field" v-for="(item, index) in getLastRecords(luckyBeggarList)" v-bind:key="index">
-      <b-tag v-if="index === 0" size="is-medium" type="is-success">{{item}}</b-tag>
-      <b-tag v-if="index > 0" type="is-light">{{item}}</b-tag>
+      <b-tag
+        :type="index === 0 ? 'is-success' : 'is-light'"
+        :size="index === 0 ? 'is-medium' : ''"
+      >{{item}}</b-tag>
     </li>
     <li v-if="luckyBeggarList.length > lastRecordNumber">...</li>
   </ul>
