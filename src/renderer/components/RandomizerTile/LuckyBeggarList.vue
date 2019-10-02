@@ -1,6 +1,6 @@
 <template>
   <ul class="wrapper" v-if="luckyBeggarList.length > 0">
-    <li class="field" v-for="(item, index) in getLastRecords(luckyBeggarList)" v-bind:key="index">
+    <li class="field" v-for="(item, index) in luckyBeggarHistory" v-bind:key="index">
       <b-tag
         :type="index === 0 ? 'is-success' : 'is-light'"
         :size="index === 0 ? 'is-medium' : ''"
@@ -19,8 +19,8 @@ export default {
       default: 4,
     },
   },
-  methods: {
-    getLastRecords() {
+  computed: {
+    luckyBeggarHistory() {
       return this.luckyBeggarList.slice(0, this.lastRecordNumber);
     },
   },
