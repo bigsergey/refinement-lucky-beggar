@@ -4,8 +4,8 @@
 
     <section class="main-container container">
       <div class="tile is-ancestor">
-        <randomizer-tile v-bind:participantList="participantList" />
-        <participants-tile v-bind:list="participantList" />
+        <randomizer-tile :participantList="participantList" />
+        <participants-tile :list="participantList" />
       </div>
     </section>
   </section>

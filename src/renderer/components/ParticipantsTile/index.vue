@@ -3,7 +3,7 @@
     <div class="tile is-child box">
       <h3 class="title">Meeting participants</h3>
 
-      <participant-list v-bind:list="list"></participant-list>
+      <participant-list :list="list"></participant-list>
       <add-participant :onAdded="onParticipantAdded"></add-participant>
     </div>
   </section>

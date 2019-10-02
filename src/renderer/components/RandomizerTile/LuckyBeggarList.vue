@@ -1,6 +1,6 @@
 <template>
   <ul class="wrapper" v-if="luckyBeggarList.length > 0">
-    <li class="field" v-for="(item, index) in luckyBeggarHistory" v-bind:key="index">
+    <li class="field" v-for="(item, index) in luckyBeggarHistory" :key="index">
       <b-tag
         :type="index === 0 ? 'is-success' : 'is-light'"
         :size="index === 0 ? 'is-medium' : ''"

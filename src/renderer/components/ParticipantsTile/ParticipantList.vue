@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li class="field" v-for="(item, index) in list" v-bind:key="index">
+    <li class="field" v-for="(item, index) in list" :key="index">
       <b-tag
         size="is-medium"
         attached
