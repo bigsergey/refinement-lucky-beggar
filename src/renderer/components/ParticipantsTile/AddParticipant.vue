@@ -15,9 +15,6 @@
 
 <script>
 export default {
-  props: {
-    onAdded: { type: Function },
-  },
   data() {
     return {
       name: '',
@@ -26,7 +23,7 @@ export default {
   methods: {
     handleSubmit() {
       if (this.name) {
-        this.onAdded(this.name);
+        this.$emit('on-added', this.name);
         this.name = '';
       }
     },

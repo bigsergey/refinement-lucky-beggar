@@ -4,7 +4,8 @@
       <h3 class="title">Meeting participants</h3>
 
       <participant-list :list="list"></participant-list>
-      <add-participant :onAdded="onParticipantAdded"></add-participant>
+
+      <add-participant @on-added="onParticipantAdded"></add-participant>
     </div>
   </section>
 </template>
