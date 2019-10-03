@@ -1,11 +1,7 @@
 <template>
   <form class="form" @submit.prevent="handleSubmit">
     <b-field>
-      <b-input
-        placeholder="Type name"
-        type="text"
-        v-model="name"
-      />
+      <b-input type="text" placeholder="Type name" v-model="name" />
       <p class="control">
         <b-input type="submit" value="Add" />
       </p>
