@@ -23,7 +23,7 @@ export default {
   methods: {
     handleSubmit() {
       if (this.name) {
-        this.$emit('on-added', this.name);
+        this.$emit('add', this.name);
         this.name = '';
       }
     },

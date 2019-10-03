@@ -9,7 +9,7 @@
         size="is-medium"
         icon-right="account-convert"
         @click="getRandomItem"
-        :disabled="participantList.length === 0"
+        :disabled="list.length === 0"
       >Generate</b-button>
 
       <lucky-beggar-list :luckyBeggarList="luckyBeggarList"/>
@@ -23,7 +23,7 @@ import LuckyBeggarList from './LuckyBeggarList';
 export default {
   components: { LuckyBeggarList },
   props: {
-    participantList: { type: Array },
+    list: { type: Array },
   },
   data() {
     return {
@@ -32,9 +32,9 @@ export default {
   },
   methods: {
     getRandomItem() {
-      const maxIndex = this.participantList.length;
+      const maxIndex = this.list.length;
       const randomIndex = Math.floor(Math.random() * maxIndex);
-      this.luckyBeggarList.unshift(this.participantList[randomIndex]);
+      this.luckyBeggarList.unshift(this.list[randomIndex]);
     },
   },
 };

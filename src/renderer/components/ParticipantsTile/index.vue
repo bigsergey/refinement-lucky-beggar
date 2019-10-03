@@ -3,9 +3,9 @@
     <div class="tile is-child box">
       <h3 class="title">Meeting participants</h3>
 
-      <participant-list :list="list"></participant-list>
+      <participant-list :list="list" @remove-item="removeParticipant"></participant-list>
 
-      <add-participant @on-added="onParticipantAdded"></add-participant>
+      <add-participant @add="addParticipant"></add-participant>
     </div>
   </section>
 </template>
@@ -20,8 +20,11 @@ export default {
     list: { type: Array },
   },
   methods: {
-    onParticipantAdded(newParticipant) {
+    addParticipant(newParticipant) {
       this.list.push(newParticipant);
+    },
+    removeParticipant(index) {
+      this.list.splice(index, 1);
     },
   },
 };

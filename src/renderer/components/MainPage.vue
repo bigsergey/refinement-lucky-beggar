@@ -4,7 +4,7 @@
 
     <section class="main-container container">
       <div class="tile is-ancestor">
-        <randomizer-tile :participantList="participantList" />
+        <randomizer-tile :list="participantList" />
         <participants-tile :list="participantList" />
       </div>
     </section>
