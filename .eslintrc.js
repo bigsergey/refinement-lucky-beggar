@@ -25,5 +25,22 @@ module.exports = {
     'no-multi-assign': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
-  }
+  },
+  'overrides': [{
+    'files': ['**/*(tests|__tests__)/**/*.js', '**/*.spec.js'],
+    'env': {
+      mocha: true,
+    },
+    'globals': {
+      'assert': true,
+      'expect': true,
+      'should': true,
+      '__static': true
+    },
+    'rules': {
+      'func-names': 0,
+      'prefer-arrow-callback': 0,
+      'no-unused-expressions': 0
+    }
+  }]
 }

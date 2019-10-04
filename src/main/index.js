@@ -25,6 +25,10 @@ function createWindow() {
 
   mainWindow.loadURL(winURL);
 
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow.openDevTools();
+  }
+
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
