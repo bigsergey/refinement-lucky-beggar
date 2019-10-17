@@ -20,20 +20,8 @@ const mutations = {
   },
 };
 
-const actions = {
-  ADD_PARTICIPANT(store, newParticipant) {
-    // eslint-disable-next-line
-    console.log(store, newParticipant);
-    store.commit('ADD_PARTICIPANT', newParticipant);
-  },
-  REMOVE_PARTICIPANT(store, index) {
-    store.commit('REMOVE_PARTICIPANT', index);
-  },
-};
-
 export default {
   state,
   getters,
   mutations,
-  actions,
 };

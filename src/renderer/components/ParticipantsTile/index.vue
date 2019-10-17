@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 import AddParticipant from './AddParticipant';
 import ParticipantList from './ParticipantList';
 
@@ -20,7 +20,7 @@ export default {
   computed: mapGetters({
     list: 'getParticipantList',
   }),
-  methods: mapActions({
+  methods: mapMutations({
     addParticipant: 'ADD_PARTICIPANT',
     removeParticipant: 'REMOVE_PARTICIPANT',
   }),
