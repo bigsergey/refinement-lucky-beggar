@@ -4,8 +4,8 @@
 
     <section class="main-container container">
       <div class="tile is-ancestor">
-        <randomizer-tile :list="participantList" />
-        <participants-tile :list="participantList" />
+        <randomizer-tile />
+        <participants-tile />
       </div>
     </section>
   </section>
@@ -18,11 +18,6 @@ import ParticipantsTile from './ParticipantsTile';
 
 export default {
   components: { Hero, ParticipantsTile, RandomizerTile },
-  data() {
-    return {
-      participantList: ['First Person', 'Second Person', 'Third Person', 'Fourth Person'],
-    };
-  },
 };
 </script>
 

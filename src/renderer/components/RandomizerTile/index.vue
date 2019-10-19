@@ -18,13 +18,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import LuckyBeggarList from './LuckyBeggarList';
 
 export default {
   components: { LuckyBeggarList },
-  props: {
-    list: { type: Array },
-  },
+  computed: mapGetters({
+    list: 'getParticipantList',
+  }),
   data() {
     return {
       luckyBeggarList: [],
@@ -39,4 +40,3 @@ export default {
   },
 };
 </script>
-
