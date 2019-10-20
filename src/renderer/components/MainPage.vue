@@ -4,7 +4,7 @@
 
     <section class="main-container container">
       <div class="tile is-ancestor">
-        <randomizer-tile />
+        <lucky-beggars-tile />
         <participants-tile />
       </div>
     </section>
@@ -13,11 +13,15 @@
 
 <script>
 import Hero from './Hero';
-import RandomizerTile from './RandomizerTile';
+import LuckyBeggarsTile from './LuckyBeggarsTile';
 import ParticipantsTile from './ParticipantsTile';
 
 export default {
-  components: { Hero, ParticipantsTile, RandomizerTile },
+  components: {
+    Hero,
+    ParticipantsTile,
+    LuckyBeggarsTile
+  },
 };
 </script>
 
