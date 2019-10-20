@@ -25,17 +25,14 @@ export default {
   components: { LuckyBeggarList },
   computed: mapGetters({
     list: 'getParticipantList',
+    luckyBeggarList: 'getLuckyBeggarList',
   }),
-  data() {
-    return {
-      luckyBeggarList: [],
-    };
-  },
   methods: {
     getRandomItem() {
       const maxIndex = this.list.length;
       const randomIndex = Math.floor(Math.random() * maxIndex);
-      this.luckyBeggarList.unshift(this.list[randomIndex]);
+
+      this.$store.commit('ADD_LUCKY_BEGGAR', this.list[randomIndex]);
     },
   },
 };
