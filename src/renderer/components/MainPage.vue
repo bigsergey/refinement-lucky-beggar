@@ -20,7 +20,7 @@ export default {
   components: {
     Hero,
     ParticipantsTile,
-    LuckyBeggarsTile
+    LuckyBeggarsTile,
   },
 };
 </script>
