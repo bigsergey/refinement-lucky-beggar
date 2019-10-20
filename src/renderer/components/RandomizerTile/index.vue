@@ -12,7 +12,10 @@
         :disabled="list.length === 0"
       >Generate</b-button>
 
-      <lucky-beggar-list :luckyBeggarList="luckyBeggarList"/>
+      <lucky-beggar-list
+        :luckyBeggarList="luckyBeggarList"
+        :historyRecordNumber="historyRecordNumber"
+      />
     </div>
   </section>
 </template>
@@ -26,6 +29,7 @@ export default {
   computed: mapGetters({
     list: 'getParticipantList',
     luckyBeggarList: 'getLuckyBeggarList',
+    historyRecordNumber: 'getHistoryRecordNumber',
   }),
   methods: {
     getRandomItem() {

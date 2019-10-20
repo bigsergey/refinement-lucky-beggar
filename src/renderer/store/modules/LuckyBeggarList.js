@@ -1,9 +1,11 @@
 const state = {
   list: [],
+  historyRecordNumber: 4,
 };
 
 const getters = {
-  getLuckyBeggarList: state => state.list,
+  getLuckyBeggarList: state => state.list.slice(0, state.historyRecordNumber),
+  getHistoryRecordNumber: state => state.historyRecordNumber,
 };
 
 const mutations = {

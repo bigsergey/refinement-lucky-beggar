@@ -1,12 +1,12 @@
 <template>
-  <ul class="wrapper" v-if="luckyBeggarList.length > 0">
-    <li class="field" v-for="(item, index) in luckyBeggarHistory" :key="index">
+  <ul class="wrapper">
+    <li class="field" v-for="(item, index) in luckyBeggarList" :key="index">
       <b-tag
         :type="index === 0 ? 'is-success' : 'is-light'"
         :size="index === 0 ? 'is-medium' : ''"
       >{{item}}</b-tag>
     </li>
-    <li v-if="luckyBeggarList.length > lastRecordNumber">...</li>
+    <li v-if="luckyBeggarList.length === historyRecordNumber">...</li>
   </ul>
 </template>
 
@@ -14,15 +14,7 @@
 export default {
   props: {
     luckyBeggarList: { type: Array },
-    lastRecordNumber: {
-      type: Number,
-      default: 4,
-    },
-  },
-  computed: {
-    luckyBeggarHistory() {
-      return this.luckyBeggarList.slice(0, this.lastRecordNumber);
-    },
+    historyRecordNumber: { type: Number },
   },
 };
 </script>
