@@ -12,31 +12,32 @@
         :disabled="list.length === 0"
       >Generate</b-button>
 
-      <lucky-beggar-list :luckyBeggarList="luckyBeggarList"/>
+      <lucky-beggar-list
+        :luckyBeggarList="luckyBeggarList"
+        :historyRecordNumber="historyRecordNumber"
+      />
     </div>
   </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import LuckyBeggarList from './LuckyBeggarList';
 
 export default {
   components: { LuckyBeggarList },
-  props: {
-    list: { type: Array },
-  },
-  data() {
-    return {
-      luckyBeggarList: [],
-    };
-  },
+  computed: mapGetters({
+    list: 'getParticipantList',
+    luckyBeggarList: 'getLuckyBeggarList',
+    historyRecordNumber: 'getHistoryRecordNumber',
+  }),
   methods: {
     getRandomItem() {
       const maxIndex = this.list.length;
       const randomIndex = Math.floor(Math.random() * maxIndex);
-      this.luckyBeggarList.unshift(this.list[randomIndex]);
+
+      this.$store.commit('ADD_LUCKY_BEGGAR', this.list[randomIndex]);
     },
   },
 };
 </script>
-

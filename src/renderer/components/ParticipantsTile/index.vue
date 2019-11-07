@@ -11,21 +11,18 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
 import AddParticipant from './AddParticipant';
 import ParticipantList from './ParticipantList';
 
 export default {
   components: { AddParticipant, ParticipantList },
-  props: {
-    list: { type: Array },
-  },
-  methods: {
-    addParticipant(newParticipant) {
-      this.list.push(newParticipant);
-    },
-    removeParticipant(index) {
-      this.list.splice(index, 1);
-    },
-  },
+  computed: mapGetters({
+    list: 'getParticipantList',
+  }),
+  methods: mapMutations({
+    addParticipant: 'ADD_PARTICIPANT',
+    removeParticipant: 'REMOVE_PARTICIPANT',
+  }),
 };
 </script>
